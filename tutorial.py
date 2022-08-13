@@ -1,37 +1,50 @@
-def my_func(*args, **kargs):
-    pass
-
 """
-    *args -> positional argument collector,
-        collects all positional arguments after the already defined positional arguments
-        
-        example: def test_func(var1, var2, var3):
+Dictionary Example:
 
-
-    **kwargs -> keyword argument collector,
-        collects all keyword arguments after the already defined positional arguments
-        
-        example def test_func(var1='hello', var2='world)
+{
+	'a': 'abc',
+	'b': 'def',
+	'c': 'ghi'
+}
 """
 
-def my_function(var1, var2, *args):
-    print(args[0], args[1])
-    print(var1, var2)
+employee = {
+	'name': 'Bob',
+	'title': 'Software Developer',
+	1: 22
+}
 
-# my_function('abc', 'def', 'hello', 'world')
 
-def my_function2(var1, text='test',*args, **kwargs):
-    print(kwargs)
+employee['email'] = 'test@test.com'
+employee.update({'name': 'Bobby', 'title': 'Software Engineer', 'phone': '111-1111'})
 
-# my_function2('abc', hello='world')
+phone = employee.pop('phone')
+# print(phone)
+# print(employee)
 
-def add_numbers(*args):
-    total = 0
+# for key in employee.values():
+# 	print(key)
 
-    for number in args:
-        total += number
+employee_tuple_list = [('name', 'Bob'), ('title', 'Software Engineer')]
+employee = dict(employee_tuple_list)
+# print(employee)
 
-    return total
+# dictinary comprehensions
+"""
+{
+	0: 0,
+	1: 1,
+	2: 4,
+	3: 9,
+	4: 16,
+}
+"""
+squares = {x : x * x for x in range(500)}
+# print(squares)
 
-print(add_numbers(1))
+dictionary0 = {'a': 0, 'b': 1}
+dictionary1 = {'c': 2, 'd': 3}
 
+dictionary0.update(dictionary1)
+
+print(dictionary0)
