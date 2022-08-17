@@ -1,50 +1,43 @@
+# sets
 """
-Dictionary Example:
-
-{
-	'a': 'abc',
-	'b': 'def',
-	'c': 'ghi'
-}
+{1, 2, 3, 4, 5, 6}
 """
 
-employee = {
-	'name': 'Bob',
-	'title': 'Software Developer',
-	1: 22
-}
+test_set = {1, 2, 3, 4, 5, 6}
+another_test_set = set('aaaaaabbbbbbccccccc')
+empty_set = set()
 
+# print (test_set)
+# print(another_test_set)
+# print(empty_set)
 
-employee['email'] = 'test@test.com'
-employee.update({'name': 'Bobby', 'title': 'Software Engineer', 'phone': '111-1111'})
+sports = {'football', 'soccer', 'basketball', 'rugby', 'baseball'}
 
-phone = employee.pop('phone')
-# print(phone)
-# print(employee)
+# print('football' in sports)
+# print('lacrosse' in sports)
 
-# for key in employee.values():
-# 	print(key)
+set1 = {0,1,2,3}
+set2 = {1,2,3,4,5,6,7,8}
 
-employee_tuple_list = [('name', 'Bob'), ('title', 'Software Engineer')]
-employee = dict(employee_tuple_list)
-# print(employee)
+union = set.union(set1, set2)
+# print(union)
 
-# dictinary comprehensions
-"""
-{
-	0: 0,
-	1: 1,
-	2: 4,
-	3: 9,
-	4: 16,
-}
-"""
-squares = {x : x * x for x in range(500)}
-# print(squares)
+intersection = set1.intersection(set2)
+# print(intersection)
 
-dictionary0 = {'a': 0, 'b': 1}
-dictionary1 = {'c': 2, 'd': 3}
+difference = set1.difference(set2)
+# print(difference)
 
-dictionary0.update(dictionary1)
+isSubset = set1 <= set2
+# print(isSubset)
 
-print(dictionary0)
+isSuperset = set2 >= set1
+# print(isSuperset)
+
+# print(set1 - set2)
+# print(set1 | set2)
+# print(set1 & set2)
+# print(set1 ^ set2)
+
+a = {x for x in 'abracadabra' if x not in 'abc'}
+print(a)
