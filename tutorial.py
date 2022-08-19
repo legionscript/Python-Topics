@@ -1,43 +1,39 @@
-# sets
-"""
-{1, 2, 3, 4, 5, 6}
-"""
+# Decorators
 
-test_set = {1, 2, 3, 4, 5, 6}
-another_test_set = set('aaaaaabbbbbbccccccc')
-empty_set = set()
+# def outer_function():
+# 	def inner_function():
+# 		print('from the inner function')
+# 	inner_function()
 
-# print (test_set)
-# print(another_test_set)
-# print(empty_set)
+# print(outer_function())
 
-sports = {'football', 'soccer', 'basketball', 'rugby', 'baseball'}
+# This won't work
+# inner_function()
 
-# print('football' in sports)
-# print('lacrosse' in sports)
+# def logging_decorator(func):
+# 	def inner_function(*args, **kwargs):
+# 		print('logging before the function is called')
+# 		returned_value = func(*args, **kwargs)
+# 		print('logging after the function is called')
+# 		return returned_value
+# 	return inner_function
 
-set1 = {0,1,2,3}
-set2 = {1,2,3,4,5,6,7,8}
+# @logging_decorator
+# def add(a, b):
+# 	print(a + b)
 
-union = set.union(set1, set2)
-# print(union)
+# add(2, 2)
 
-intersection = set1.intersection(set2)
-# print(intersection)
+def triple(func):
+	def inner_function(*args, **kwargs):
+		returned_value = func(*args, **kwargs)
 
-difference = set1.difference(set2)
-# print(difference)
+		return returned_value * 3
 
-isSubset = set1 <= set2
-# print(isSubset)
+	return inner_function
 
-isSuperset = set2 >= set1
-# print(isSuperset)
+@triple
+def add(a, b):
+	return a + b
 
-# print(set1 - set2)
-# print(set1 | set2)
-# print(set1 & set2)
-# print(set1 ^ set2)
-
-a = {x for x in 'abracadabra' if x not in 'abc'}
-print(a)
+print(add(2, 8))
