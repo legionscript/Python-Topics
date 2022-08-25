@@ -1,39 +1,26 @@
-# Decorators
+numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 
-# def outer_function():
-# 	def inner_function():
-# 		print('from the inner function')
-# 	inner_function()
+under10 = []
+for number in numbers:
+	if number < 10:
+		under10.append(number)
 
-# print(outer_function())
+print(under10)
 
-# This won't work
-# inner_function()
+under10 = [number for number in numbers if number < 10]
 
-# def logging_decorator(func):
-# 	def inner_function(*args, **kwargs):
-# 		print('logging before the function is called')
-# 		returned_value = func(*args, **kwargs)
-# 		print('logging after the function is called')
-# 		return returned_value
-# 	return inner_function
+print(under10)
 
-# @logging_decorator
-# def add(a, b):
-# 	print(a + b)
+variable_name = [expression for variable in iterable opt_bool_exp]
 
-# add(2, 2)
+up_to_fifty = [x for x in range(51)]
 
-def triple(func):
-	def inner_function(*args, **kwargs):
-		returned_value = func(*args, **kwargs)
+print(up_to_fifty)
 
-		return returned_value * 3
+other_numbers = [x for x in numbers if x > 3 and x < 12]
 
-	return inner_function
+print(other_numbers)
 
-@triple
-def add(a, b):
-	return a + b
+times_three = [i * 3 for i in range(10)]
 
-print(add(2, 8))
+print(times_three)
