@@ -1,26 +1,54 @@
-numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+"""
+r - reading only
+	
+rb - reading only in binary format
 
-under10 = []
-for number in numbers:
-	if number < 10:
-		under10.append(number)
+r+ - both reading and writing
 
-print(under10)
+rb+ - both reading and writing in binary format
+	
+w - writing only
 
-under10 = [number for number in numbers if number < 10]
+wb - writing only in binary format
 
-print(under10)
+w+ - both writing and reading
 
-variable_name = [expression for variable in iterable opt_bool_exp]
+wb+ - both writing and reading in binary format
 
-up_to_fifty = [x for x in range(51)]
+a - appending
 
-print(up_to_fifty)
+ab - appending in binary format
 
-other_numbers = [x for x in numbers if x > 3 and x < 12]
+a+ - both appending and reading
 
-print(other_numbers)
+ab+ - both appending and reading in binary format
+"""
+import os
+import json
 
-times_three = [i * 3 for i in range(10)]
+# test_file = open("test_file.txt", "a+")
 
-print(times_three)
+# test_file.write("test3")
+
+# test_file.close()
+
+# with open("test_file.txt", "a+") as test_file:
+# 	test_file.write("\ntest4")
+
+# os.rename("another_test.txt", "test2.txt")
+
+# os.remove("test2.txt")
+
+test_data = {
+	"abc": "test data"
+}
+
+# print(json.dumps(test_data))
+
+# with open("test_file.json", "w") as f:
+	# json.dump(test_data, f)
+
+# with open("test_file.json") as f:
+# 	json_data = json.load(f)
+
+# print(json_data)
