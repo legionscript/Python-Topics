@@ -1,54 +1,28 @@
-"""
-r - reading only
-	
-rb - reading only in binary format
+# small anonymous function (function without a name)
 
-r+ - both reading and writing
+# var_name = lambda var : expression
 
-rb+ - both reading and writing in binary format
-	
-w - writing only
+subtract_5 = lambda x : x - 5
 
-wb - writing only in binary format
+multi_vars = lambda x, y, z : (x*2, y*2, z*2)
 
-w+ - both writing and reading
+# def multi_vars(x,y,z):
+# 	return (x*2, y*2, z*2)
 
-wb+ - both writing and reading in binary format
+def add_number(num):
+	return lambda x : x + num
 
-a - appending
+add_five = add_number(5)
 
-ab - appending in binary format
+add_three = add_number(3)
 
-a+ - both appending and reading
+# print(add_five(15))
+# print(add_three(20))
 
-ab+ - both appending and reading in binary format
-"""
-import os
-import json
+def multiply(num):
+	return lambda number : number * num
 
-# test_file = open("test_file.txt", "a+")
+double = multiply(2)
+triple = multiply(3)
 
-# test_file.write("test3")
-
-# test_file.close()
-
-# with open("test_file.txt", "a+") as test_file:
-# 	test_file.write("\ntest4")
-
-# os.rename("another_test.txt", "test2.txt")
-
-# os.remove("test2.txt")
-
-test_data = {
-	"abc": "test data"
-}
-
-# print(json.dumps(test_data))
-
-# with open("test_file.json", "w") as f:
-	# json.dump(test_data, f)
-
-# with open("test_file.json") as f:
-# 	json_data = json.load(f)
-
-# print(json_data)
+print(double(10))
